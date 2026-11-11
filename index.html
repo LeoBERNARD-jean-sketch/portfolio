@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Léo Bernard – Materials Engineer (Master’s level): research, composites, polymers, experimental work. Portfolio.">
+<title>Léo Bernard – Materials Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<!--
+ÉDITION
+- Tailles (même règle partout) : --s1 titres de sections · --s2 titres de postes/diplômes (gras) et entreprises/universités + dates · --s3 texte · --s4 skills. Voir :root.
+- Ajouter une expérience : copier un bloc <article class="entry"> et changer le texte.
+- Ajouter un skill : copier <span class="car">…</span> dans <div class="sk">. Classes : car = caractérisation (rouge), mat = matériaux & procédés (bleu), mod = modélisation & logiciels (noir), com = communication (vert), oth = autre (gris).
+-->
+<style>
+:root{
+  --bg:#fff;--fg:#000;--mute:#444;--line:#d9d9d9;--acc:#5b2a86;
+  --car:#c0281e;--mat:#1f4fa3;--mod:#111;--com:#2a7a3b;--oth:#6b6b6b;
+  --s1:27px;--s2:23px;--s3:19px;--s4:14.5px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:20px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:var(--s3)/1.6 "EB Garamond",Garamond,Georgia,"Times New Roman",serif;padding-top:env(safe-area-inset-top,0);padding-bottom:env(safe-area-inset-bottom,0)}
+main{max-width:780px;margin:0 auto;padding:56px 24px 80px}
+
+/* En-tête */
+h1{font-size:40px;font-weight:600;margin:0;letter-spacing:-.01em;line-height:1.15}
+.sub{color:var(--mute);font-style:italic;font-size:25px;line-height:1.35;margin:.3em 0 1em;text-align:left}
+.meta{color:var(--mute);font-size:var(--s3);margin:0 0 .6em;text-align:left}
+a{color:var(--acc)}
+.kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin:2em 0 0;padding:1.4em 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.kpi div{text-align:center;font-size:16px;line-height:1.4;color:var(--mute)}
+.kpi big{display:block;font-size:34px;white-space:nowrap;font-weight:600;color:var(--acc);line-height:1.15}
+.kpi b{display:block;color:var(--fg);font-size:var(--s3);margin:.2em 0}
+
+/* Niveau 1 : titres de sections */
+h2{font-size:var(--s1);font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--acc);border-bottom:1px solid var(--line);padding-bottom:.3em;margin:2.6em 0 1.1em;line-height:1.25}
+
+/* Niveau 2 : titres de postes / diplômes (gras) puis entreprise / université + date (normal) */
+h3{font-size:var(--s2);font-weight:700;margin:0;line-height:1.25;text-align:left}
+p.org{font-size:var(--s2);font-weight:400;margin:.15em 0 .4em;line-height:1.3;text-align:left}
+
+/* Niveau 3 : descriptif */
+p,li,dd,dt{font-size:var(--s3)}
+p{margin:.5em 0}
+p,li,dd{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+p.ttl{font-style:italic;color:var(--mute);margin:.1em 0 .5em;text-align:left}
+h4{font-size:var(--s3);font-style:italic;font-weight:600;margin:1em 0 .1em;text-align:left}
+ul,ol{margin:.3em 0;padding-left:1.2em}
+li{margin:.25em 0}
+nav ol{margin:0}
+nav .subl{list-style:none;margin:0;padding-left:1.4em}
+h2.subh{font-size:var(--s2);font-weight:700;text-transform:none;letter-spacing:.02em;border-bottom:none;margin:1.8em 0 .5em;padding:0}
+nav a{text-decoration:none}
+nav a:hover{text-decoration:underline}
+.entry{margin:0 0 2.2em}
+
+/* Niveau 4 : skills en boîtes */
+.car{--c:var(--car)}.mat{--c:var(--mat)}.mod{--c:var(--mod)}.com{--c:var(--com)}.oth{--c:var(--oth)}
+.sk{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1em}
+.sk span{font-size:var(--s4);line-height:1.3;padding:.18em .65em;border-radius:8px;color:var(--c);border:1px solid var(--c);background:color-mix(in srgb,var(--c) 7%,transparent)}
+.legend{margin:2.6em 0 0;padding-top:1em;border-top:1px solid var(--line);align-items:center}
+.legend i{font-style:normal;font-size:var(--s4);color:var(--mute);margin-right:.3rem}
+
+/* Listes en deux colonnes (skills, langues…) */
+dl{display:grid;grid-template-columns:200px 1fr;gap:.6em 1.4em;margin:0}
+dt{font-weight:600}
+dd{margin:0}
+#skills dt,#skills dd{color:var(--c)}
+#skills dt{padding-left:.6em;border-left:3px solid var(--c)}
+footer{color:var(--mute);font-size:15px;margin-top:4em;border-top:1px solid var(--line);padding-top:1em}
+
+@media(max-width:600px){
+  :root{--s1:21px;--s2:20px;--s3:18px;--s4:14px}
+  main{padding:36px 18px 60px}
+  h1{font-size:32px}.sub{font-size:21px}
+  dl{grid-template-columns:1fr;gap:.2em}
+  dd{margin-bottom:.8em}
+  .kpi{grid-template-columns:1fr}
+}
+.deco{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.deco path{mix-blend-mode:multiply}
+@media print{.deco{display:none}}
+</style>
+</head>
+<body>
+<svg class="deco" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+<path fill="#c0281e" opacity=".10" d="M-20 120 Q120 20 330 70 Q150 70 40 190 Q-10 230 -20 120Z"/>
+<path fill="#1f4fa3" opacity=".09" d="M780 -10 Q930 60 1030 40 L1030 70 Q900 110 760 20Z"/>
+<path fill="none" stroke="#2a7a3b" opacity=".12" stroke-width="7" stroke-linecap="round" d="M30 420 Q-10 560 90 640 Q160 690 220 640"/>
+<path fill="#1f4fa3" opacity=".08" d="M900 330 Q990 420 960 560 Q955 450 880 360Z"/>
+<path fill="#6b6b6b" opacity=".10" d="M-10 820 Q80 760 190 790 Q90 800 20 870Z"/>
+<path fill="none" stroke="#c0281e" opacity=".10" stroke-width="5" stroke-linecap="round" d="M860 700 Q980 720 960 840 Q940 920 850 930"/>
+<path fill="#2a7a3b" opacity=".09" d="M760 1010 Q880 930 1030 960 L1030 1010Z"/>
+<path fill="none" stroke="#1f4fa3" opacity=".10" stroke-width="4" stroke-linecap="round" d="M40 960 Q110 900 200 940"/>
+</svg>
+<main>
+
+<header>
+<h1>Léo BERNARD</h1>
+<p class="sub">Materials Engineer (Master’s level) · Materials Science, Composites &amp; Polymers</p>
+</header>
+<div class="kpi">
+<div><big>1 year</big><b>in research</b>6 months industrial R&amp;D + 6 months consulting &amp; laboratory</div>
+<div><big>1 year</big><b>international</b>6 months professional (Belgium) + 6 months studies (Hungary)</div>
+<div><big>300 ECTS</big><b>higher education</b>120 technical degree (DUT) + 180 engineering school</div>
+</div>
+
+<p class="meta" style="margin-top:1.2em"><a href="mailto:leobernardjean@gmail.com">leobernardjean@gmail.com</a> · <a href="https://www.linkedin.com/in/léo-bernard-506252226">LinkedIn</a> · <span style="font-size:var(--s4)">Born in 2001</span></p>
+<p class="meta">References available on request: two of my former supervisors, both PhD holders (ALTEN R&amp;D Program Director; OPmobility mechanical engineer), who know first-hand how I work.</p>
+
+<h2>Abstract</h2>
+<p>Materials Engineer holding a French Engineering Degree (<i>Diplôme d’Ingénieur</i>, Master’s level) from the University of Technology of Troyes (UTT), following a two-year technical degree (DUT) in Physical Measurements.</p>
+<p>My experience spans several research environments: an industrial R&amp;D department (OPmobility), an engineering consulting company (ALTEN) and a public research laboratory (ICA, Toulouse). I have developed hands-on skills in materials characterization, process optimization, experimental work and data analysis. Both of my 6-month R&amp;D internships earned the highest grade (A), awarded by the university (written report and oral defence) and by the company supervisor.</p>
+<p>Curious, organized, independent, and sociable, I adapt easily to new working environments thanks to my personality and the diversity of my experiences. Passionate about scientific research, I particularly enjoy hands-on and experimental work, which allows me to bridge the gap between theory and practice and tackle real-world challenges. I believe that one of my main strengths lies in the way I work and approach problems. Rigorous and methodical, I like to understand the challenges I face, approach them logically, and find practical and suitable solutions. I enjoy learning, taking on new challenges, and stepping outside my comfort zone. Far from being an obstacle, discovering new fields, working methods, and international environments is a genuine source of motivation for me.</p>
+
+<nav>
+<h2>Contents</h2>
+<ol>
+<li><a href="#research">Experience</a>
+<ul class="subl"><li><a href="#research">1.1 · Research &amp; industry experience</a></li><li><a href="#international">1.2 · International experience</a></li></ul></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#skills">Skills</a>
+<ul class="subl"><li><a href="#skills">3.1 · Hard skills</a></li><li><a href="#soft">3.2 · Approach &amp; soft skills</a></li></ul></li>
+<li><a href="#more">Other relevant activities</a>
+<ul class="subl"><li><a href="#more">4.1 · Activities</a></li><li><a href="#awards">4.2 · Awards</a></li><li><a href="#seasonal">4.3 · Seasonal jobs</a></li></ul></li>
+<li><a href="#langs">Languages &amp; interests</a></li>
+</ol>
+</nav>
+
+<!-- ============ 1. EXPERIENCE ============ -->
+<section id="research">
+<h2>1 · Experience</h2>
+<h2 class="subh">1.1 · Research &amp; industry experience</h2>
+<p class="ttl">Note: my professional experiences are covered by confidentiality agreements, so I cannot describe my work in more detail.</p>
+
+<article class="entry">
+<h3>R&amp;D – Final-Year (5th Year) Materials Engineering Internship – 26 weeks</h3>
+<p class="org">ALTEN SE, Toulouse (France) · 09/2025 – 03/2026</p>
+<p class="ttl">Carbon Fiber &amp; Thermoplastic Composites: Optimization, Processing &amp; Feasibility</p>
+<h4>Context</h4>
+<p>Final-year internship in ALTEN’s Innovation Department, within the Zéphir project aiming to break windsurfing speed records, with industrial and academic partners (ICA laboratory, Arkema, Alpha Recyclage Composite, and 27-time windsurfing world champion Antoine Albeau, etc.). In 09/2025 the manufacturing process was chosen, but not the materials, combinations and parameters. Earlier recycling routes degraded the fibres too much (especially their shape) for high-stress use. A fairly new vapo-thermolysis process, developed by Alpha Recyclage Composite, recovers both matrix and fibre in a better state, as a usable non-woven veil. Only one application was known so far: the European CIDER project, which remained a prototype. The windsurf board is meant, above all, to be a first direct and concrete application.</p>
+<h4>Objectives</h4>
+<ul>
+<li>Contribute to the making of an eco-engineered windsurf board by working on its materials, combinations and parameters, integrating recycled and recyclable materials (including recycled carbon fibre) while combining high performance, industrial feasibility and reduced environmental impact. A bonus goal: present the prototype at JEC 2026 (Arkema stand).</li>
+<li>Demonstrate the feasibility of recycled carbon fibre in a high-performance (non-aerospace) application, and the benefit of a route that recovers both fibre and matrix. Building the prototype is also a way to demonstrate the soundness and value of the recycling project itself.</li>
+</ul>
+<h4>Work</h4>
+<ul>
+<li><b>Experimental:</b> processing and characterization of recycled carbon fibre reinforcements; drapability studies on 3D-printed prototypes of the board shape; infusion trials; process and design optimization (plies, fibre type, fibre volume fraction…) with a Taguchi design of experiments; tensile and dissolution tests.</li>
+<li><b>Numerical:</b> image-based analysis of fibre orientation distributions to estimate effective mechanical properties; video analysis of infusion to extract permeability; process simulations to optimize infusion and reduce defects such as dry spots.</li>
+<li><b>Environmental:</b> Life Cycle Assessment comparing design scenarios to support material and process selection, and to verify that the choices made remain consistent with the goal of a board with a lower environmental impact.</li>
+<li><b>Communication:</b> comprehensive state-of-the-art report, technical reports, weekly project presentations, coordination with external consultants.</li>
+</ul>
+<h4>Results</h4>
+<p>This work contributed to the understanding and initial qualification of recycled carbon fibre reinforcements for structural applications, demonstrating their relevance for high-performance composite systems and supporting the development of more sustainable and efficient composite structures. It also demonstrated the consistency and feasibility of the project with respect to its specifications. <b>The prototype was built and exhibited at the Arkema stand at JEC, Paris, March 2026.</b></p>
+<h4>Evaluation</h4>
+<p>Grade A (the highest grade) awarded for this internship, based on a written report and an oral defence assessed by the university, and on the evaluation of my company supervisor.</p>
+<h4>Associated skills</h4>
+<div class="sk"><span class="car">Dissolution test</span><span class="car">Tensile test</span><span class="car">Mechanical properties</span><span class="car">Laboratory work</span><span class="car">Experimental work</span><span class="car">Characterisation</span><span class="mat">Composite</span><span class="mat">Composite manufacturing</span><span class="mat">Thermoplastic resin</span><span class="mat">Resin mixture</span><span class="mat">Carbon fibre</span><span class="mat">Drapability</span><span class="mat">Vacuum infusion process</span><span class="mat">3D printing</span><span class="mod">Microsoft Office</span><span class="mod">Python (Spyder)</span><span class="mod">VS Code</span><span class="mod">RTMsim</span><span class="mod">Experimental design</span><span class="mod">Life Cycle Assessment</span><span class="mod">Feasibility</span><span class="mod">Numerical simulation</span><span class="mod">Blender</span><span class="mod">Image processing</span><span class="mod">Video processing</span><span class="mod">Finite element simulation</span><span class="mod">Automation of data analysis</span><span class="com">Technical reports</span><span class="com">Literature review / State of the art</span><span class="com">Bibliographic research</span><span class="com">Presentations</span><span class="com">Coordination</span><span class="com">Interdisciplinary work</span><span class="com">Collaboration with multiple partners</span></div>
+</article>
+
+<article class="entry">
+<h3>R&amp;D – 4th-Year Materials Engineering Internship – 26 weeks</h3>
+<p class="org">OPmobility (H2-POWER division), Genk (Belgium) · 02/2024 – 08/2024</p>
+<p class="ttl">High-performance polymers for composite structures (thermoset resins, carbon fiber composites)</p>
+<h4>Context</h4>
+<p>Internship in OPmobility’s R&amp;D center, in an applied research environment on high-pressure hydrogen vessels: carbon fibre composite structures and thermoset resin systems, with a focus on resin behaviour and process optimisation. At the start, the resin’s precise behaviour and a characterization protocol were not established, no predictive model existed, and in-house knowledge was limited.</p>
+<h4>Objectives</h4>
+<ul>
+<li>Characterize a resin to build its TTT diagram and model its curing with kinetic models (e.g. Kamal–Sourour) to understand and predict its behaviour.</li>
+<li>Link glass transition temperature (Tg), degree of cure, electrical properties and viscosity.</li>
+<li>Validate with thermocouples embedded in real vessels, and establish a protocol to characterize future resins more efficiently.</li>
+</ul>
+<h4>Work</h4>
+<ul>
+<li><b>Experimental:</b> more than 300 tests on fast-curing thermoset resins used in wet filament winding (iterative, trial-and-error approach): DSC for curing kinetics and TTT diagrams; cure-simulator experiments on cure/viscosity/electrical/Tg relationships; analysis of thermocouple data from real manufacturing conditions.</li>
+<li><b>Modelling:</b> calibration of curing kinetic models under different thermal cycles; Python automation of data processing; collaboration with materials and simulation teams.</li>
+<li><b>Support:</b> quality control (density measurements to identify other issues; DSC to verify that the resin was properly cured) and a cost model (cost per vessel vs. number of vessels).</li>
+</ul>
+<h4>Results</h4>
+<p>This work contributed to a better understanding of resin curing kinetics and to the development of predictive models for composite processing. It also enabled the identification of the key experimental tests required to efficiently characterize new resin systems, allowing a more targeted and time-efficient experimental strategy for future studies. The final outcome was a contribution to process optimization, particularly enabling a significant reduction in the curing time (up to 70 % in some cases) of high-pressure hydrogen vessels.</p>
+<h4>Evaluation</h4>
+<p>Grade A (the highest grade) awarded for this internship, based on a written report and an oral defence assessed by the university, and on the evaluation of my company supervisor.</p>
+<h4>Associated skills</h4>
+<div class="sk"><span class="car">Microscopic analysis (optical microscope)</span><span class="car">DSC</span><span class="car">Mechanical properties</span><span class="car">Viscosity</span><span class="car">Density measurement</span><span class="car">Thermocouple</span><span class="car">Experimental work</span><span class="car">Glass transition temperature</span><span class="car">Trial and error</span><span class="car">Protocol creation</span><span class="car">Characterisation</span><span class="car">Quality control</span><span class="mat">Synthesis and analysis of polymers</span><span class="mat">Composite</span><span class="mat">Composite manufacturing</span><span class="mat">Thermoset resin</span><span class="mat">Resin mixture</span><span class="mat">Carbon fibre</span><span class="mat">Wet filament winding</span><span class="mod">Microsoft Office</span><span class="mod">Python (Spyder)</span><span class="mod">Cost modelling</span><span class="mod">Kinetic modelling</span><span class="mod">Cure simulation</span><span class="mod">TTT diagram</span><span class="mod">Automation of data analysis</span><span class="com">Technical reports</span><span class="com">Literature review / State of the art</span><span class="com">Bibliographic research</span><span class="com">Presentations</span><span class="com">International environment</span></div>
+</article>
+
+<article class="entry">
+<h3>Quality Control Technician Internship – 10 weeks</h3>
+<p class="org">Aperam Alloys Imphy (France) · 04/2022 – 06/2022</p>
+<h4>Context</h4>
+<p>End-of-DUT internship carried out as a technician, in the quality control department of the Cold Rolling division.</p>
+<h4>Work</h4>
+<p>Qualification of a magnetic measurement bench, replacement of an arc-welding recorder, metrology.</p>
+<h4>Associated skills</h4>
+<div class="sk"><span class="car">Metrology</span><span class="car">Quality control</span></div>
+</article>
+
+<h2 class="subh" id="international">1.2 · International experience</h2>
+<ul>
+<li><b>Professional – Belgium (6 months):</b> R&amp;D internship at OPmobility, Genk, in an international team.</li>
+<li><b>Academic – Hungary (6 months):</b> exchange semester at the Budapest University of Technology and Economics (BME), 02/2025 – 06/2025: composite technology, thermal physics, environmental chemistry and technology, cross-cultural communication, ethics for engineers, hand lay-up.</li>
+</ul>
+</section>
+
+<!-- ============ 3. EDUCATION ============ -->
+<section id="education">
+<h2>2 · Education</h2>
+
+<article class="entry">
+<h3>Engineering degree in Materials Science (Master’s level, 180 ECTS)</h3>
+<p class="org">University of Technology of Troyes (UTT), Troyes (France) · 09/2022 – 03/2026</p>
+<p>Courses: polymer chemistry, polymers &amp; composites, nanomaterials, macro/microscopic characterization, materials for energy, life cycle analysis, mechanics of materials, CAD (CATIA V5, Creo), radiation–matter interactions, purchasing and cost reduction, materials commerce, standards &amp; regulations, innovation.</p>
+<h4>Associated skills</h4>
+<div class="sk"><span class="car">Optical microscopy</span><span class="car">AFM</span><span class="car">SEM</span><span class="car">XRD</span><span class="car">Ellipsometry</span><span class="car">Surface energy &amp; wettability</span><span class="car">Chromatography</span><span class="car">DSC</span><span class="car">Tensile test</span><span class="car">Mechanical properties</span><span class="car">Rheology</span><span class="car">Laboratory work</span><span class="car">Glass transition temperature</span><span class="car">Characterisation</span><span class="car">Spectroscopy (UV-Vis, IR, Raman, NMR)</span><span class="car">Microhardness tests</span><span class="car">Creep tests</span><span class="car">Fatigue tests</span><span class="mat">Synthesis and analysis of polymers</span><span class="mat">Resin mixture</span><span class="mat">Composite</span><span class="mat">Composite manufacturing</span><span class="mat">Photopolymerisation</span><span class="mat">Bulk radical polymerisation</span><span class="mod">Microsoft Office</span><span class="mod">CATIA V5</span><span class="mod">Creo</span><span class="mod">Abaqus</span><span class="mod">Ansys Granta EduPack</span><span class="mod">Finite element simulation</span><span class="com">Presentations</span></div>
+</article>
+
+<article class="entry">
+<h3>Exchange semester in Materials Science</h3>
+<p class="org">Budapest University of Technology and Economics (BME), Budapest (Hungary) · 02/2025 – 06/2025</p>
+<p>Courses: composite technology, thermal physics, environmental chemistry and technology, cross-cultural communication (English B2), ethics for engineers, Hungarian culture.</p>
+<h4>Associated skills</h4>
+<div class="sk"><span class="car">Tensile test</span><span class="mat">Composite</span><span class="mat">Composite manufacturing</span><span class="mat">Hand lay-up</span><span class="com">Presentations</span></div>
+</article>
+
+<article class="entry">
+<h3>DUT Physical Measurements (120 ECTS)</h3>
+<p class="org">University Institute of Technology (IUT) of Bourges, Bourges (France) · 09/2020 – 06/2022</p>
+<p>A technical university degree. Materials Science option. Metrology, chemistry, optics, thermodynamics, fluid mechanics, electronics, electricity, mechanics.</p>
+<h4>Associated skills</h4>
+<div class="sk"><span class="car">Metrology</span><span class="car">Quality control</span></div>
+</article>
+
+<article class="entry">
+<h3>First year of common core medical studies (PACES)</h3>
+<p class="org">Faculty of Medicine, Clermont-Ferrand (France) · 2019 – 2020</p>
+</article>
+
+<article class="entry">
+<h3>French Baccalaureate (High School Diploma)</h3>
+<p class="org">Lycée Jules Renard, Nevers (France) · 2016 – 2019</p>
+<p>Science series with Biology and Earth science option.</p>
+</article>
+</section>
+
+<!-- ============ 4. SKILLS (texte, sans boîtes) ============ -->
+<section id="skills">
+<h2>3 · Skills</h2>
+<h2 class="subh">3.1 · Hard skills</h2>
+<dl>
+<dt class="car">Characterisation</dt><dd class="car">DSC, rheology, viscosity, glass transition temperature, tensile / creep / fatigue / microhardness tests, dissolution test, mechanical properties, optical microscopy, SEM, AFM, XRD, ellipsometry, spectroscopy (UV-Vis, IR, Raman, NMR), chromatography, surface energy &amp; wettability, density measurement, thermocouples, metrology, quality control, laboratory and experimental work, trial and error, protocol creation</dd>
+<dt class="mat">Materials &amp; processes</dt><dd class="mat">Synthesis and analysis of polymers, photopolymerisation, bulk radical polymerisation, thermoset and thermoplastic resins, resin mixture, carbon fibre (incl. recycled), composite manufacturing, vacuum infusion, wet filament winding, hand lay-up, drapability, 3D printing</dd>
+<dt class="mod">Modelling &amp; software</dt><dd class="mod">Kinetic modelling, cure simulation, TTT diagram, numerical and finite element simulation (Abaqus), RTMsim, experimental design (Taguchi), Life Cycle Assessment, cost modelling, feasibility studies; Python (Spyder, VS Code), automation of data analysis, image and video processing, CATIA V5, Creo, Blender, Ansys Granta EduPack, Microsoft Office</dd>
+<dt class="com">Communication &amp; collaboration</dt><dd class="com">Technical reports, literature review / state of the art, bibliographic research, presentations, coordination, interdisciplinary work, collaboration with multiple partners, international environment</dd>
+<dt class="oth">Other</dt><dd class="oth">Physical work, bearing responsibilities, focus</dd>
+</dl>
+<h2 class="subh" id="soft">3.2 · Approach &amp; soft skills</h2>
+<p>Curious · Organized · Independent · Sociable · Rigorous · Methodical · Adaptable · Cheerful</p>
+</section>
+
+<!-- ============ 6. JOBS SAISONNIERS, DISTINCTION, ACTIVITÉS ============ -->
+<section id="more">
+<h2>4 · Other relevant activities</h2>
+<h2 class="subh">4.1 · Activities</h2>
+<article class="entry">
+<h3>Student event team</h3>
+<p class="org">Troyes (France) · 09/2024 – 01/2025</p>
+<p>Organizing events for students throughout the semester, which involved managing time and people’s tasks as well as material and financial resources.</p>
+</article>
+
+<h2 class="subh" id="awards">4.2 · Awards</h2>
+<article class="entry">
+<h3>Winning team – Innovation UTT CRUNCHTIME Challenge</h3>
+<p class="org">University of Technology of Troyes (UTT), Troyes (France) · 05/2023</p>
+<p>Member of the winning team within our thematic group at the Innovation UTT CRUNCHTIME Challenge, a 3-day interdisciplinary competition involving teams of 6 students from diverse engineering disciplines. The challenge, proposed by an industrial partner and focused on the recycling of boat sails, required responding to a real-world problem within 3 days through a technical report and an explanatory video presentation.</p>
+</article>
+
+<h2 class="subh" id="seasonal">4.3 · Seasonal jobs</h2>
+<article class="entry">
+<h3>Landscaper – seasonal job</h3>
+<p class="org">JSP Paysage, Varennes-Vauzelles (France) · 07/2023</p>
+<p>Lawn mowing, weeding, brush clearing, hedge trimming and general landscaping duties.</p>
+<h4>Associated skills</h4>
+<div class="sk"><span class="oth">Physical work</span></div>
+</article>
+
+<article class="entry">
+<h3>Certified lifeguard (B.N.S.S.A.) – seasonal job</h3>
+<p class="org">ADESS 58, Chevenon (France) · July 2019, July 2020 and July 2021</p>
+<p>Seasonal employment as a certified lifeguard (B.N.S.S.A.), responsible for the care and safety of the supervised swimming area.</p>
+<h4>Associated skills</h4>
+<div class="sk"><span class="oth">Bearing responsibilities</span><span class="oth">Focus</span></div>
+</article>
+</section>
+
+<section id="langs">
+<h2>5 · Languages &amp; interests</h2>
+<dl>
+<dt>Languages</dt><dd>French: native<br>English: C1 (B2+ certified, Linguaskill)</dd>
+<dt>Interests</dt><dd>Climbing (bouldering)<br>Swimming (7 years in a leisure club)<br>Horology (watch collection and repair kit)<br>Biathlon (watching)<br>Music (listening)<br>Science and space, and the point where they meet philosophy: topics that can improve our understanding of the universe and why things are the way they are. For example the Fermi paradox and the Drake equation, Gödel’s incompleteness theorems, the history of science, the Ig Nobel Prizes <em>(and they are sometimes easier to understand than the normal Nobel…)</em>, etc.</dd>
+</dl>
+</section>
+
+
+<footer>© 2026 Léo Bernard</footer>
+</main>
+</body>
+</html>
